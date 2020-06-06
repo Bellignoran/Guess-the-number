@@ -1,0 +1,26 @@
+import random
+import time
+answer = random.randint(0,10)
+counter = 5
+print("Guess a number between 1 and 10, you have 5 goes")
+while counter != 0:
+    guess = int(input())
+    if guess == answer:
+        print("well done!")
+        break
+    elif guess < answer:
+        print("you're too low")
+        time.sleep(0.5)
+        counter -= 1
+        guess = input("Guess a number between 1 and 30 \n")
+        time.sleep(0.5)
+        print(f"you have {counter} goes left")
+    elif guess > answer:
+        print("you're too high")
+        time.sleep(0.5)
+        guess = input("Guess a number between 1 and 30 \n")
+        counter -= 1
+        time.sleep(0.5)
+        print(f"you have {counter} goes left")
+if counter == 0:
+    print("you lose! the anwser was", answer)
